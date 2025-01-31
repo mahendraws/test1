@@ -1,0 +1,177 @@
+<html>
+
+<head>
+
+<style>
+body
+{
+background-color:caf0f8;
+
+}
+
+.atul
+{
+
+width:100%;
+height:100vh;
+background:caf0f8;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.calculator
+{
+background:#03045e;
+padding:20px;
+border-radius:10px;
+}
+input
+{
+width:60px;
+height:60px;
+border-radius:10px;
+box-shadow:-8px -8px 15px rgba(255,255,255,0.1), 5px 5px 15px rgba(0,0,0,0.2)
+
+background:transparent;
+font-size:20px;
+color:03045e;
+cursor:pointer;
+margin:10px;			
+			
+}
+#display
+{
+display:flex;
+justify-content:flex-end;
+margin:20px 0;
+width:325px;
+
+#display input
+{
+text-align:right;
+flex:1;
+font-size:45px;
+box-shadow:none;
+background:#33ffd8;
+}
+}
+#equal
+{
+width:145px;
+background-color:0077b6;
+}
+#signs
+{
+background-color:0077b6;
+}
+
+input:hover
+{
+width:60px;
+height:60px;
+border-radius:10px;
+box-shadow:-8px -8px 15px rgba(255,255,255,0.1), 5px 5px 15px rgba(0,0,0,0.2)
+
+background:transparent;
+font-size:20px;
+color:red;
+cursor:pointer;
+margin:10px;			
+			
+}
+
+</style>
+
+</head>
+<body>
+
+<div class="atul">
+
+ <div class="calculator">
+ 
+   <div>
+    <input type="text" id="display">
+   </div>
+   
+    <div >
+	
+	  <input onclick="ac()" type="button" value="AC" id="signs">
+	  <input onclick="de()" type="button" value="DE" id="signs">
+	  <input onclick="add('.')" type="button" value="." id="signs">
+	  <input onclick="add('/')" type="button" value="/" id="signs">
+	  
+	</div>
+	
+    <div>
+	
+	  <input onclick="add(1)" type="button" value="1">
+	  <input onclick="add(2)" type="button" value="2">
+	  <input onclick="add(3)" type="button" value="3">
+	  <input onclick="add('*')" type="button" value="*" id="signs">
+	  
+    </div>
+	
+    <div>
+	  <input onclick="add(4)" type="button" value="4">
+	  <input onclick="add(5)" type="button" value="5">
+	  <input onclick="add(6)" type="button" value="6">
+	  <input onclick="add('-')" type="button" value="-" id="signs">
+	  
+    </div>
+	
+    <div>
+	
+	  <input onclick="add(7)" type="button" value="7">
+	  <input onclick="add(8)" type="button" value="8">
+	  <input onclick="add(9)" type="button" value="9">
+	  <input onclick="add('+')" type="button" value="+" id="signs">
+	  
+    </div>
+    <div>
+	
+	  <input onclick="add(0)" type="button" value="0">
+	  <input onclick="add('00')" type="button" value="00">
+	  <input onclick="ans('=')" type="button" value="=" id="equal">
+	  
+    </div>
+	
+   
+ </div>
+ 
+</div>
+<script>
+
+function add(val)
+{
+
+inp = document.getElementById("display")
+inp.value = inp.value + val
+
+}
+
+function ans()
+{
+	inp = document.getElementById("display")
+	a = eval(inp.value)
+	inp.value = a
+}
+
+function ac(val)
+{
+
+inp = document.getElementById("display")
+inp.value = ' '
+
+}
+
+function de()
+{
+	inp = document.getElementById("display")
+inp.value=inp.value.slice(0,-1)
+
+}
+
+</script>
+</body>
+</html>
